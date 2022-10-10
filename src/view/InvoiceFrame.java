@@ -7,7 +7,7 @@ import model.InvoiceHeader;
 import java.util.ArrayList;
 
 public class InvoiceFrame extends javax.swing.JFrame {
-    private javax.swing.JButton cancelBtn;
+    private javax.swing.JButton deleteItemBtn;
     private javax.swing.JButton createInvoiceBtn;
     public static javax.swing.JTextField customerNameTxtField;
     private javax.swing.JButton deleteInvoiceBtn;
@@ -37,8 +37,9 @@ public class InvoiceFrame extends javax.swing.JFrame {
 
         createInvoiceBtn.addActionListener(actionHandler);
         deleteInvoiceBtn.addActionListener(actionHandler);
+        deleteInvoiceBtn.addActionListener(actionHandler);
         saveBtn.addActionListener(actionHandler);
-        cancelBtn.addActionListener(actionHandler);
+        deleteItemBtn.addActionListener(actionHandler);
         loadFileMenuItem.addActionListener(actionHandler);
         saveFileMenuItem.addActionListener(actionHandler);
         invoicesTable.addMouseListener(mouseHandler);
@@ -70,7 +71,7 @@ public class InvoiceFrame extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         itemsTable = new javax.swing.JTable();
         saveBtn = new javax.swing.JButton();
-        cancelBtn = new javax.swing.JButton();
+        deleteItemBtn = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         loadFileMenuItem = new javax.swing.JMenuItem();
@@ -177,7 +178,7 @@ public class InvoiceFrame extends javax.swing.JFrame {
 
         saveBtn.setText("Add item");
 
-        cancelBtn.setText("Cancel item");
+        deleteItemBtn.setText("Delete item");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -205,7 +206,7 @@ public class InvoiceFrame extends javax.swing.JFrame {
                                 .addGap(73, 73, 73)
                                 .addComponent(saveBtn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cancelBtn)
+                                .addComponent(deleteItemBtn)
                                 .addGap(66, 66, 66))
         );
         jPanel2Layout.setVerticalGroup(
@@ -234,7 +235,7 @@ public class InvoiceFrame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(saveBtn)
-                                        .addComponent(cancelBtn))
+                                        .addComponent(deleteItemBtn))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 

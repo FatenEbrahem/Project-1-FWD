@@ -3,7 +3,6 @@ package controler;
 import model.FileOperations;
 import model.InvoiceHeader;
 import model.InvoiceLines;
-import model.InvoiceLines;
 import view.InvoiceFrame;
 import view.NewInvoiceDialog;
 import view.NewItemDialog;
@@ -43,8 +42,8 @@ public class ActionHandler implements ActionListener {
             case "Add item":
                 saveItem();
                 break;
-            case "Cancel item":
-                cancelItem();
+            case "Delete item":
+                deleteItem();
                 break;
         }
 
@@ -236,7 +235,7 @@ public class ActionHandler implements ActionListener {
         }
     }
 
-    private void cancelItem() {
+    private void deleteItem() {
         int selectedRowInInvoiceTable = InvoiceFrame.invoicesTable.getSelectedRow();
         if (selectedRowInInvoiceTable >= 0) {
 
@@ -263,6 +262,9 @@ public class ActionHandler implements ActionListener {
                 Object[][] table1Data = getInvoiceTableData(InvoiceFrame.invoices);
                 InvoiceFrame.invoicesTable.setModel(new DefaultTableModel(table1Data,
                         new String[]{"No.", "Date", "Customer", "Total"}));
+
+                System.out.println("Deleted Successfully");
+                System.out.println("******************************************");
 
             } else {
                 System.out.println("Select Invoice and Item in the same time");

@@ -1,5 +1,9 @@
 package model;
 
+import view.InvoiceFrame;
+import view.NewItemDialog;
+
+import javax.swing.table.DefaultTableModel;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -206,4 +210,5 @@ public class FileOperations {
         return new PrintWriter(new BufferedWriter(new FileWriter(filePath)));
     }
 }
+
 
